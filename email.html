@@ -29,12 +29,12 @@
 </main>
 <script>
 (function(){
-  var box=document.getElementById('modulo'), TAGLIO=72;
+  var box=document.getElementById('modulo'), TAGLIO=54;
   function adatta(){
     var f=box.querySelector('iframe'); if(!f)return;
     var h=f.offsetHeight; if(h>TAGLIO+40){box.style.height=(h-TAGLIO)+'px';}
   }
-  setInterval(adatta,300);
+  setInterval(adatta,150);
 })();
 </script>
 </body>
