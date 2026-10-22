@@ -5,31 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Passo 1 | Club dei Disastri</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.foglio-quaderno{
+  position:relative;margin:34px 0 0;padding:34px 22px 26px;background:#fff;
+  border:1.5px solid var(--inchiostro);border-radius:4px;
+  box-shadow:6px 6px 0 var(--fondino);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,#e9e6dc 31px,#e9e6dc 32px);
+  background-position:0 18px;
+}
+.foglio-quaderno::before{
+  content:"";position:absolute;top:0;bottom:0;left:30px;border-left:1.5px solid #e2b9b4;
+}
+.scotch{
+  position:absolute;top:-14px;width:96px;height:26px;background:rgba(232,228,214,.92);
+  border:1px solid #d6d1c1;
+}
+.scotch.sx{left:-18px;transform:rotate(-24deg)}
+.scotch.dx{right:-18px;transform:rotate(22deg)}
+.foglio-quaderno .num-passo{
+  display:inline-block;font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+  border:1.5px solid var(--inchiostro);border-radius:999px;padding:3px 12px;margin:0 0 14px 22px;background:#fff;
+}
+.foglio-quaderno h1{font-size:30px;text-align:left;margin:0 0 12px;padding-left:22px}
+.foglio-quaderno p{padding-left:22px;font-size:18px;line-height:32px;margin:0}
+.foglio-quaderno .bottone{margin-top:26px}
+.figura-pane{display:block;width:170px;height:auto;margin:6px auto -8px;position:relative;z-index:1}
+.dopo{max-height:0;overflow:hidden;opacity:0;transition:max-height .9s ease,opacity .9s ease}
+.dopo.visibile{max-height:240px;opacity:1}
+.dopo p.grazie{text-align:center;font-style:italic;margin:18px 0 4px;padding-left:0}
+.foglio-quaderno p.tempo{font-size:14px;color:var(--matita);text-align:center;margin-top:6px;padding-left:0;line-height:1.4}
+</style>
 </head>
 <body>
 <main class="pagina">
   <p class="etichetta">Club dei Disastri</p>
-  <div class="passi"><span class="attivo">Passo 1</span><span>Passo 2</span></div>
-  <h1>Una cosa sola</h1>
-  <div class="filetto"></div>
 
-  <img class="figura piccola" src="img/pane-basso.png" alt="Una mano tiene basso il pane mentre scivola dal tavolo">
+  <img class="figura-pane" src="img/pane-basso.png" alt="Una mano tiene basso il pane mentre scivola dal tavolo">
 
-  <p class="attacco centro">Questo libro non ha una casa editrice dietro: ha solo il passaparola.<br>Due righe oneste su Amazon aiutano il prossimo genitore a scegliere.</p>
+  <div class="foglio-quaderno">
+    <span class="scotch sx"></span><span class="scotch dx"></span>
+    <span class="num-passo">Passo 1 di 2</span>
+    <h1>Una cosa sola</h1>
+    <p>Questo libro non ha una casa editrice dietro: ha solo il passaparola.</p>
+    <p>Due righe oneste su Amazon aiutano il prossimo genitore a scegliere.</p>
 
-  <a class="bottone brilla" id="vai-recensione" href="https://www.amazon.it/review/create-review?asin=B0HJ3ZTF7Q" target="_blank" rel="noopener">★ Scrivi la recensione su Amazon ★</a>
-  <a class="bottone vuoto nascosto" id="vai-bonus" href="bonus.html">Vai ai bonus</a>
+    <a class="bottone brilla" id="vai-recensione" href="https://www.amazon.it/review/create-review?asin=B0HJ3ZTF7Q" target="_blank" rel="noopener">★ Scrivi la recensione ★</a>
+    <p class="tempo">Ci vogliono due minuti.</p>
 
+    <div class="dopo" id="dopo">
+      <p class="grazie">Grazie. Adesso tocca ai bonus.</p>
+      <a class="bottone vuoto" href="bonus.html">Vai ai bonus →</a>
+    </div>
+  </div>
 
   <footer>Le 101 Leggi di Murphy per Ragazzi</footer>
 </main>
 <script>
-(function(){
-  var b=document.getElementById('vai-bonus');
-  function mostra(){b.classList.add('visibile');}
-  setTimeout(mostra,8000);
-  document.getElementById('vai-recensione').addEventListener('click',function(){setTimeout(mostra,1500);});
-})();
+document.getElementById('vai-recensione').addEventListener('click',function(){
+  setTimeout(function(){document.getElementById('dopo').classList.add('visibile');},1200);
+});
 </script>
 </body>
 </html>
