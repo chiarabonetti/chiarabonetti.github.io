@@ -38,3 +38,13 @@
 .modulo-systeme{margin:14px 0 0 22px;min-height:150px;overflow:hidden;position:relative}
 .modulo-systeme iframe{width:100%!important;border:0}
 .foglio-quaderno p.consenso{font-size:13px;line-height:1.5;color:var(--matita);margin-top:6px}
+@media (max-width:480px){
+  .foglio-quaderno{padding:28px 12px 22px}
+  .foglio-quaderno::before{left:20px}
+  .foglio-quaderno h1{font-size:26px;line-height:32px;padding-left:16px}
+  .foglio-quaderno p{padding-left:16px;font-size:17px}
+  .foglio-quaderno .num-passo{margin-left:16px}
+  .foglio-quaderno p.foto{margin-left:16px}
+  .modulo-systeme{margin:10px 0 0 6px}
+  .figura-pane{width:130px}
+}
