@@ -35,6 +35,6 @@
 .modulo .errore{color:#a12a1f;font-size:15px;min-height:1em;text-align:center;padding-left:0}
 .foglio-quaderno .modulo .bottone{margin-top:22px}
 .foglio-quaderno p.foto{margin-top:14px;background:#fffbea;border:1.5px dashed #c58a00;border-radius:6px;padding:10px 12px 10px 14px;margin-left:22px;line-height:1.5;font-size:16px}
-.modulo-systeme{margin:14px 0 0 22px;min-height:150px}
+.modulo-systeme{margin:14px 0 0 22px;min-height:150px;overflow:hidden;position:relative}
 .modulo-systeme iframe{width:100%!important;border:0}
 .foglio-quaderno p.consenso{font-size:13px;line-height:1.5;color:var(--matita);margin-top:6px}

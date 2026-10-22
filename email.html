@@ -19,13 +19,23 @@
     <h1>Dove ti mandiamo i bonus?</h1>
     <p>Scrivi il nome di chi legge e l'email di un adulto: ti mandiamo i bonus per email, così li ritrovi quando vuoi.</p>
 
-    <div class="modulo-systeme">
+    <div class="modulo-systeme" id="modulo">
       <script id="form-script-tag-25899940" src="https://fil-fattoruso.systeme.io/public/remote/page/45964080d4377762f50e2ffb31f5e18783684cb1.js"></script>
     </div>
-    <p class="consenso">Premendo «Avanti» confermi di essere un genitore o un adulto e di aver letto l'<a href="privacy.html" target="_blank">informativa privacy</a>.</p>
+    <p class="consenso">Ti scriviamo solo per i bonus e le novità della serie. Niente spam, ti cancelli con un clic. Premendo «Avanti» confermi di essere un genitore o un adulto e di aver letto l'<a href="privacy.html" target="_blank">informativa privacy</a>.</p>
   </div>
 
   <footer>Le 101 Leggi di Murphy per Ragazzi</footer>
 </main>
+<script>
+(function(){
+  var box=document.getElementById('modulo'), TAGLIO=72;
+  function adatta(){
+    var f=box.querySelector('iframe'); if(!f)return;
+    var h=f.offsetHeight; if(h>TAGLIO+40){box.style.height=(h-TAGLIO)+'px';}
+  }
+  setInterval(adatta,300);
+})();
+</script>
 </body>
 </html>
