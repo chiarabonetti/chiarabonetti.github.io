@@ -22,13 +22,13 @@
 .carta .em{font-size:7.4pt;margin:0 0 1.5mm}
 .carta .em b{letter-spacing:.12em}
 .cerchi{display:flex;justify-content:space-between;margin-top:1mm}
-.cerchi div{width:8.5mm;height:8.5mm;border:1px solid #000;border-radius:50%;display:flex;align-items:flex-end;justify-content:center;font-size:6pt;padding-bottom:.6mm}
+.cerchi div{width:10mm;height:10mm;border:1px solid #000;border-radius:50%;display:flex;align-items:flex-end;justify-content:center;font-size:6pt;padding-bottom:.6mm}
 .piega{text-align:center;font-size:8pt;color:#555;margin-top:-7mm;margin-bottom:8mm}
 .bollini h3{font-size:11pt;margin:0 0 1mm}
 .bollini p{font-size:9pt;margin:0 0 3mm}
 .striscia{display:flex;gap:3mm;flex-wrap:wrap}
-.bollino{width:20mm;height:20mm;border:1.4px dashed #000;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:6.2pt;font-weight:700;letter-spacing:.06em;line-height:1.15;padding:2mm;background:#fff}
-.bollino span{display:block;font-size:11pt;margin-bottom:.5mm}
+.bollino{display:flex;flex-direction:column;align-items:center;width:22mm;font-size:6.2pt;font-weight:700;letter-spacing:.06em;text-align:center;line-height:1.15}
+.bollino .tondo{width:9.5mm;height:9.5mm;border:1.2px dashed #000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10pt;margin-bottom:1.2mm;background:#fff}
 .coda{font-size:8.5pt;font-style:italic;margin-top:4mm}
 .comandi{max-width:186mm;margin:0 auto 18px}
 @media print{body{background:#fff}.comandi,footer{display:none}.foglio{border:0;padding:0;max-width:none}.pagina{padding:0;max-width:none}}
@@ -56,7 +56,7 @@
         <p class="piccolo">Chi trova questa tessera la restituisca: appartiene a un esperto di disastri in formazione.</p>
       </div>
       <div class="carta">
-        <p class="club" style="text-align:left;margin-bottom:1mm">Le regole del club</p>
+        <p class="club" style="text-align:left;margin-bottom:1mm">Le frasi del club</p>
         <ol>
           <li>Qui dentro nessuno ride di una scheda.</li>
           <li>Una copia sola non è una copia.</li>
@@ -73,15 +73,15 @@
 
     <div class="bollini">
       <h3>I bollini dei gradi</h3>
-      <p>Un bollino si incolla solo quando hai spuntato il grado sul cruscotto, cioè quando hai provato davvero almeno due Mosse di quel capitolo. Le Mosse lette non valgono. Non c'è un ordine obbligatorio, come nel libro: se il capitolo tre lo finisci prima del due, incolla prima il tre.</p>
+      <p>Ritaglia solo il tondo. Un bollino si incolla solo quando hai spuntato il grado sul cruscotto, cioè quando hai provato davvero almeno due Mosse di quel capitolo. Le Mosse lette non valgono. Non c'è un ordine obbligatorio, come nel libro: se il capitolo tre lo finisci prima del due, incolla prima il tre.</p>
       <div class="striscia">
-        <div class="bollino"><div><span>1</span>RECLUTA</div></div>
-        <div class="bollino"><div><span>2</span>OSSER&shy;VATORE</div></div>
-        <div class="bollino"><div><span>3</span>INVESTI&shy;GATORE</div></div>
-        <div class="bollino"><div><span>4</span>AGENTE</div></div>
-        <div class="bollino"><div><span>5</span>AGENTE SPECIALE</div></div>
-        <div class="bollino"><div><span>6</span>CAPO&shy;SQUADRA</div></div>
-        <div class="bollino"><div><span>7</span>ESPERTO DI DISASTRI</div></div>
+        <div class="bollino"><div class="tondo">1★</div>RECLUTA</div>
+        <div class="bollino"><div class="tondo">2★</div>OSSER&shy;VATORE</div>
+        <div class="bollino"><div class="tondo">3★</div>INVESTI&shy;GATORE</div>
+        <div class="bollino"><div class="tondo">4★</div>AGENTE</div>
+        <div class="bollino"><div class="tondo">5★</div>AGENTE SPECIALE</div>
+        <div class="bollino"><div class="tondo">6★</div>CAPO&shy;SQUADRA</div>
+        <div class="bollino"><div class="tondo">7★</div>ESPERTO DI DISASTRI</div>
       </div>
       <p class="coda">Se un bollino si stacca, riattaccalo con il nastro adesivo e lascialo storto. Al club le cose riattaccate valgono doppio.</p>
     </div>

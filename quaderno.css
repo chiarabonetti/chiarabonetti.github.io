@@ -1,0 +1,40 @@
+.foglio-quaderno{
+  position:relative;margin:34px 0 0;padding:34px 22px 26px;background:#fff;
+  border:1.5px solid var(--inchiostro);border-radius:4px;
+  box-shadow:6px 6px 0 var(--fondino);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,#e9e6dc 31px,#e9e6dc 32px);
+  background-position:0 18px;
+}
+.foglio-quaderno::before{
+  content:"";position:absolute;top:0;bottom:0;left:30px;border-left:1.5px solid #e2b9b4;
+}
+.scotch{
+  position:absolute;top:-14px;width:96px;height:26px;background:rgba(232,228,214,.92);
+  border:1px solid #d6d1c1;
+}
+.scotch.sx{left:-18px;transform:rotate(-24deg)}
+.scotch.dx{right:-18px;transform:rotate(22deg)}
+.foglio-quaderno .num-passo{
+  display:inline-block;font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+  border:1.5px solid var(--inchiostro);border-radius:999px;padding:3px 12px;margin:0 0 14px 22px;background:#fff;
+}
+.foglio-quaderno h1{font-size:30px;text-align:left;margin:0 0 12px;padding-left:22px}
+.foglio-quaderno p{padding-left:22px;font-size:18px;line-height:32px;margin:0}
+.foglio-quaderno .bottone{margin-top:26px}
+.figura-pane{display:block;width:170px;height:auto;margin:6px auto -8px;position:relative;z-index:1}
+.dopo{max-height:0;overflow:hidden;opacity:0;transition:max-height .9s ease,opacity .9s ease}
+.dopo.visibile{max-height:240px;opacity:1}
+.dopo p.grazie{text-align:center;font-style:italic;margin:18px 0 4px;padding-left:0}
+.foglio-quaderno p.tempo{font-size:14px;color:var(--matita);text-align:center;margin-top:6px;padding-left:0;line-height:1.4}
+.modulo{padding-left:22px;margin-top:10px}
+.modulo label{font-size:15px;margin:14px 0 4px}
+.modulo input[type=text],.modulo input[type=email]{background:#fff}
+.modulo .spunta{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px;line-height:1.4;margin:12px 0 0}
+.modulo .spunta input{width:20px;height:20px;flex:0 0 20px;margin-top:1px;accent-color:#1b1b1b}
+.modulo .facoltativa{color:var(--matita)}
+.modulo .errore{color:#a12a1f;font-size:15px;min-height:1em;text-align:center;padding-left:0}
+.foglio-quaderno .modulo .bottone{margin-top:22px}
+.foglio-quaderno p.foto{margin-top:14px;background:#fffbea;border:1.5px dashed #c58a00;border-radius:6px;padding:10px 12px 10px 14px;margin-left:22px;line-height:1.5;font-size:16px}
+.modulo-systeme{margin:14px 0 0 22px;min-height:150px}
+.modulo-systeme iframe{width:100%!important;border:0}
+.foglio-quaderno p.consenso{font-size:13px;line-height:1.5;color:var(--matita);margin-top:6px}

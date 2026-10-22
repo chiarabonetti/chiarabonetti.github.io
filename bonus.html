@@ -9,7 +9,7 @@
 <body>
 <main class="pagina">
   <p class="etichetta">Club dei Disastri</p>
-  <div class="passi"><span>Passo 1</span><span class="attivo">Passo 2</span></div>
+  <div class="passi"><span>Passo 1</span><span>Passo 2</span><span class="attivo">Passo 3</span></div>
   <h1>I bonus del libro</h1>
   <div class="filetto"></div>
 
@@ -118,11 +118,12 @@
     <p class="nota centro">← scorri →</p>
   </section>
 
-  <p class="nota centro" style="margin-top:30px">I nomi scritti qui non vengono salvati né inviati.</p>
+  <p class="nota centro" style="margin-top:30px">I nomi scritti per la tessera e il diploma restano sul tuo telefono: servono solo a comporre il foglio da stampare.</p>
 
   <footer>Le 101 Leggi di Murphy per Ragazzi · Chiara M. Bonetti</footer>
 </main>
 <script>
+try{var nl=sessionStorage.getItem('nomeLettore');if(nl){document.getElementById('nome-t').value=nl;document.getElementById('nome-d').value=nl;}}catch(x){}
 function pulito(s){return (s||'').trim().replace(/\s+/g,' ').slice(0,24);}
 function creaTessera(){
   var n=pulito(document.getElementById('nome-t').value);

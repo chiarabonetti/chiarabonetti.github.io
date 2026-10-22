@@ -5,20 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grazie | Club dei Disastri</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="quaderno.css">
+<style>
+.copertina{display:block;width:100%;max-width:520px;height:auto;margin:0 auto -18px;position:relative;z-index:1}
+.foglio-quaderno h1.grande{font-size:44px;letter-spacing:.01em}
+.dentro{list-style:none;margin:8px 0 0;padding:0 0 0 22px}
+.dentro li{display:flex;gap:12px;align-items:center;font-size:17px;line-height:32px;margin:0}
+.dentro li span{flex:0 0 26px;height:26px;border:1.5px solid var(--inchiostro);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:#fff}
+.timbro{position:absolute;right:18px;top:22px;transform:rotate(9deg);border:2px solid #a12a1f;color:#a12a1f;border-radius:6px;padding:4px 10px;font-size:12px;letter-spacing:.2em;font-weight:700;text-transform:uppercase;opacity:.85}
+</style>
 </head>
 <body>
 <main class="pagina">
   <p class="etichetta">Club dei Disastri</p>
-  <h1>Grazie</h1>
-  <div class="filetto"></div>
 
-  <img class="figura" src="img/pane-per-terra.png" alt="Una fetta di pane caduta dal lato della marmellata sul pavimento di una cucina">
+  <img class="copertina" src="img/pane-per-terra.png" alt="Una fetta di pane caduta dal lato della marmellata sul pavimento di una cucina">
 
-  <p class="centro">Adesso il quaderno del Club dei Disastri è tuo.<br>Qui ci sono i tuoi bonus.</p>
-
-  <p class="firma">Chiara M. Bonetti</p>
-
-  <a class="bottone" href="recensione.html">Avanti</a>
+  <div class="foglio-quaderno">
+    <span class="scotch sx"></span><span class="scotch dx"></span>
+    <span class="timbro">Nuovo membro</span>
+    <h1 class="grande">Grazie!</h1>
+    <p>Adesso il quaderno del Club dei Disastri è tuo.</p>
+    <p>Qui ti aspettano:</p>
+    <ul class="dentro">
+      <li><span>1</span>gli altri 3 libri della serie, in regalo</li>
+      <li><span>2</span>la tessera del club con il tuo nome</li>
+      <li><span>3</span>il gioco di carte delle 101 leggi</li>
+      <li><span>4</span>il kit mattina e verifica</li>
+      <li><span>5</span>il diploma, a libro finito</li>
+    </ul>
+    <p class="firma" style="margin-top:14px">Chiara M. Bonetti</p>
+    <a class="bottone brilla" href="email.html">Prendi i bonus →</a>
+  </div>
 
   <footer>Le 101 Leggi di Murphy per Ragazzi</footer>
 </main>
