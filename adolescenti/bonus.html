@@ -30,26 +30,9 @@
 
   <section class="bonus" id="codice">
     <p class="num">Bonus 2</p>
-    <h3>Il Codice da tenere sul telefono</h3>
-    <p>Le 23 contromosse del libro come sfondo della schermata di blocco: uno per capitolo, così ogni volta che prendi il telefono le rivedi senza aprire niente.</p>
-    <div class="selettore" id="stile">
-      <button type="button" data-v="carta" class="attivo">Chiaro</button>
-      <button type="button" data-v="notte">Scuro</button>
-      <button type="button" data-v="tratto">Carta</button>
-    </div>
-    <div class="selettore" id="tel">
-      <button type="button" data-v="" class="attivo">iPhone</button>
-      <button type="button" data-v="-android">Android</button>
-    </div>
-    <div class="griglia" id="griglia"></div>
-    <div class="istruzioni">
-      <p><strong>Come si mette.</strong> Tocca lo sfondo che vuoi e salvalo.</p>
-      <p><strong>iPhone:</strong> apri la foto, tocca Condividi (il quadrato con la freccia), poi «Usa come sfondo» e scegli la schermata di blocco.</p>
-      <p><strong>Android:</strong> apri la foto, tocca i tre puntini, poi «Imposta come sfondo» e scegli la schermata di blocco.</p>
-      <p>Ogni settimana cambia capitolo: in sette settimane le hai viste tutte.</p>
-    </div>
-    <a class="bottone vuoto" href="bonus/codice-da-tasca.pdf" download>Il Codice da tasca, da stampare (PDF)</a>
-    <a class="bottone vuoto" href="bonus/codice-sfondi-telefono.zip" download>Tutti gli sfondi in un file zip (dal computer)</a>
+    <h3>Il Codice da tasca</h3>
+    <p>Le 23 contromosse degli effetti in un libretto da un foglio e in due segnalibri: si stampano, si piegano e si tengono nel diario o nell'astuccio.</p>
+    <a class="bottone vuoto" href="bonus/codice-da-tasca.pdf" download>Scarica il Codice da tasca (PDF)</a>
   </section>
 
   <section class="bonus">
@@ -101,24 +84,5 @@
 
   <footer>La Legge di Murphy per Adolescenti Sbadati · Chiara M. Bonetti · <a href="../privacy.html">Privacy</a></footer>
 </main>
-<script>
-var CAP=["Il corpo che ti tradisce","Lo schermo","Il gruppo","La scuola","Le ore che non sono scuola","Gli adulti","Chi stai diventando"];
-var stile='carta', tel='';
-function disegna(){
-  var g=document.getElementById('griglia'), h='';
-  for(var i=1;i<=7;i++){
-    var nome='codice-sfondo-telefono-'+i+'-'+stile+tel+'.png';
-    h+='<a href="bonus/sfondi/'+nome+'" download="'+nome+'"><img src="bonus/sfondi-anteprime/codice-sfondo-telefono-'+i+'-'+stile+'.jpg" alt="Sfondo capitolo '+i+'" loading="lazy">'+i+'. '+CAP[i-1]+'<br><strong>Scarica</strong></a>';
-  }
-  g.innerHTML=h;
-}
-function sel(id,cb){
-  var b=document.querySelectorAll('#'+id+' button');
-  b.forEach(function(x){x.addEventListener('click',function(){b.forEach(function(y){y.classList.remove('attivo')});x.classList.add('attivo');cb(x.getAttribute('data-v'));disegna();});});
-}
-sel('stile',function(v){stile=v});
-sel('tel',function(v){tel=v});
-disegna();
-</script>
 </body>
 </html>
