@@ -39,6 +39,8 @@
 .modulo-systeme iframe{width:100%!important;border:0}
 .foglio-quaderno p.consenso{font-size:13px;line-height:1.5;color:var(--matita);margin-top:6px}
 @media (max-width:480px){
+  html,body{overflow-x:hidden}
+  .scotch{width:80px}.scotch.sx{left:-10px}.scotch.dx{right:-10px}
   .foglio-quaderno{padding:28px 12px 22px}
   .foglio-quaderno::before{left:20px}
   .foglio-quaderno h1{font-size:26px;line-height:32px;padding-left:16px}
