@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il tuo diploma | Club dei Disastri</title>
+<link rel="stylesheet" href="style.css">
+<style>
+@page{size:A4 portrait;margin:10mm}
+.foglio{background:#fff;max-width:190mm;margin:0 auto;padding:7mm;border:1px solid var(--riga)}
+.cornice{border:2.5px solid #000;outline:1px solid #000;outline-offset:-6px;padding:14mm 12mm 10mm;text-align:center;position:relative;min-height:200mm}
+.cornice .club{font-size:9pt;letter-spacing:.4em;text-transform:uppercase;margin:0 0 3mm}
+.cornice h1{font-size:24pt;letter-spacing:.06em;margin:0 0 2mm}
+.cornice .fil{width:30mm;border-top:1.5px solid #000;margin:4mm auto 8mm}
+.cornice .si{font-style:italic;font-size:13pt;margin:0 0 3mm}
+.cornice .nome{font-size:26pt;font-weight:700;margin:0 auto 8mm;border-bottom:1.5px solid #000;display:inline-block;min-width:110mm;padding:0 6mm 1mm;word-break:break-word}
+.cornice .righe{font-size:13pt;line-height:1.9;margin:0 0 7mm}
+.cornice .righe b{font-size:15pt;display:inline-block;min-width:10mm;border-bottom:1px solid #000}
+.cornice .frase{font-size:13pt;font-style:italic;margin:0 auto 6mm;max-width:130mm}
+.cornice .motto{font-size:12pt;margin:0 0 12mm}
+.firme{display:flex;justify-content:space-between;gap:12mm;margin-top:10mm;font-size:10.5pt}
+.firme div{flex:1;border-top:1px solid #000;padding-top:2mm;text-align:left}
+.cornice .fig{width:44mm;margin:2mm auto 4mm;display:block}
+.sotto{border-top:1.4px dashed #000;margin-top:8mm;padding-top:5mm;font-size:10pt}
+.sotto h3{font-size:11pt;margin:0 0 2mm}
+.comandi{max-width:190mm;margin:0 auto 18px}
+@media print{body{background:#fff}.comandi{display:none}.foglio{border:0;padding:0;max-width:none}.pagina{padding:0;max-width:none}.cornice{min-height:auto}}
+</style>
+</head>
+<body>
+<main class="pagina" style="max-width:820px">
+  <div class="comandi">
+    <p class="etichetta">Club dei Disastri</p>
+    <button class="bottone" type="button" onclick="window.print()">Stampa il diploma</button>
+    <a class="bottone vuoto" href="bonus.html#diploma">Torna ai bonus</a>
+  </div>
+
+  <div class="foglio">
+    <div class="cornice">
+      <p class="club">Club dei Disastri</p>
+      <h1>DIPLOMA</h1>
+      <div class="fil"></div>
+      <p class="si">Si certifica che</p>
+      <p class="nome" id="nome">______________</p>
+      <p class="righe">
+        ha provato <b id="m"></b> Mosse su 23,<br>
+        ha riconosciuto <b id="l"></b> leggi su 101,<br>
+        ha conquistato <b id="g"></b> gradi su 7,<br>
+        <span id="l102"></span>
+      </p>
+      <p class="motto">Da oggi sa che quando una cosa ha un nome smette di essere sfortuna.</p>
+      <img class="fig" src="img/oggetti.png" alt="">
+      <p class="frase" id="frase"></p>
+      <div class="firme"><div>Data: <span id="data"></span></div><div>Firma</div></div>
+    </div>
+    <div class="sotto">
+      <h3>Per chi lo appende</h3>
+      <p>Il posto giusto per questo diploma è dove lo vedi la mattina, quando cade il pane. Sopra la scrivania va bene. Sul frigo va benissimo.</p>
+      <p>Se il libro passa a un fratello, a una sorella o a un amico, il suo diploma lo crei sulla stessa pagina dei bonus. Firmalo tu: come dice il libro, firmato da te vale di più.</p>
+    </div>
+  </div>
+</main>
+<script>
+var q=new URLSearchParams(location.search);
+function num(k,max){var v=parseInt(q.get(k),10);return isNaN(v)?0:Math.max(0,Math.min(max,v));}
+var n=(q.get('nome')||'').trim().slice(0,24), m=num('m',23), l=num('l',101), g=num('g',7);
+document.getElementById('nome').textContent=n||'______________';
+document.getElementById('m').textContent=m;
+document.getElementById('l').textContent=l;
+document.getElementById('g').textContent=g;
+document.getElementById('l102').textContent=q.get('l102')==='si'?'e ha scritto la sua Legge numero 102.':'e la sua Legge numero 102 la sta ancora cercando.';
+var f='';
+if(m>=19)f='Ha finito lo schedario: il prossimo lo scrive da sé.';
+else if(m>=13)f='Fa parte del club per davvero.';
+else if(m>=6)f='La metà delle volte, quando qualcosa va storto, sa già che cosa fare.';
+document.getElementById('frase').textContent=f;
+document.getElementById('data').textContent=new Date().toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'});
+document.title=(n?n+' | ':'')+'Diploma del Club dei Disastri';
+if(m<6){location.replace('bonus.html#diploma');}
+</script>
+</body>
+</html>

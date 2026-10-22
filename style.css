@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap');
+
+:root{
+  --carta:#fbfaf6;
+  --inchiostro:#1b1b1b;
+  --matita:#5a5a5a;
+  --riga:#d9d6cc;
+  --fondino:#efece4;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--carta);color:var(--inchiostro);
+  font-family:'Literata',Georgia,'Times New Roman',serif;
+  font-size:18px;line-height:1.6;
+}
+.pagina{max-width:640px;margin:0 auto;padding:28px 18px 64px}
+.etichetta{
+  font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--matita);text-align:center;margin:0 0 18px;
+}
+h1{font-size:34px;line-height:1.2;text-align:center;margin:0 0 6px;font-weight:700}
+h2{font-size:24px;line-height:1.25;margin:40px 0 10px;font-weight:700}
+h3{font-size:19px;margin:0 0 6px;font-weight:700}
+.filetto{width:84px;height:0;border-top:1.5px solid var(--inchiostro);margin:14px auto 26px}
+p{margin:0 0 14px}
+.attacco::first-line{font-variant:small-caps;letter-spacing:.06em}
+.centro{text-align:center}
+.firma{margin-top:22px;text-align:right;font-style:italic}
+.figura{display:block;max-width:100%;height:auto;margin:22px auto}
+.figura.piccola{max-width:220px}
+
+.passi{display:flex;justify-content:center;gap:10px;margin:0 0 22px;font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+.passi span{border:1.5px solid var(--inchiostro);border-radius:999px;padding:3px 12px;color:var(--matita);border-color:var(--riga)}
+.passi span.attivo{color:var(--inchiostro);border-color:var(--inchiostro);font-weight:600}
+
+.bottone{
+  display:block;width:100%;text-align:center;text-decoration:none;cursor:pointer;
+  font:inherit;font-weight:600;font-size:18px;
+  background:var(--inchiostro);color:var(--carta);
+  border:2px solid var(--inchiostro);border-radius:10px;padding:15px 18px;margin:12px 0;
+}
+.bottone.vuoto{background:transparent;color:var(--inchiostro)}
+.bottone:active{transform:translateY(1px)}
+
+.riquadro{
+  border:2px solid var(--inchiostro);border-radius:6px;padding:20px 18px;margin:26px 0;
+  background:#fff;position:relative;
+}
+.riquadro.tratteggio{border-style:dashed}
+.riquadro .nastro{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(-2deg);
+  background:var(--fondino);border:1px solid var(--riga);
+  font-size:12px;letter-spacing:.25em;text-transform:uppercase;padding:3px 14px;white-space:nowrap;
+}
+.scheda{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--riga)}
+.scheda:first-of-type{border-top:0}
+.scheda .num{
+  flex:0 0 44px;height:44px;border:2px solid var(--inchiostro);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;
+}
+.scheda .testo{flex:1}
+.scheda .testo p{margin:0 0 8px;font-size:16px}
+.per-grandi{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--matita)}
+
+label{display:block;font-weight:600;margin:12px 0 6px;font-size:16px}
+input[type=text],input[type=number]{
+  width:100%;font:inherit;font-size:18px;padding:12px 12px;
+  border:2px solid var(--inchiostro);border-radius:8px;background:var(--carta);
+}
+.riga-campi{display:flex;gap:10px}
+.riga-campi>div{flex:1}
+.scelta{display:flex;gap:14px;font-size:16px;margin-top:4px}
+.scelta label{font-weight:400;margin:0;display:flex;align-items:center;gap:6px}
+.avviso{border-left:3px solid var(--inchiostro);padding:8px 12px;background:var(--fondino);font-size:16px;margin-top:10px;display:none}
+.nota{font-size:14px;color:var(--matita)}
+footer{margin-top:48px;text-align:center;font-size:13px;color:var(--matita)}
+
+/* pulsante della recensione: brilla e respira */
+.bottone.brilla{position:relative;overflow:hidden;animation:respira 1.8s ease-in-out infinite;box-shadow:4px 4px 0 var(--riga)}
+.bottone.brilla::after{content:"";position:absolute;top:-50%;left:-60%;width:40%;height:200%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:rotate(18deg);
+  animation:luccica 2.6s ease-in-out infinite}
+@keyframes respira{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.04) rotate(-.6deg)}}
+@keyframes luccica{0%{left:-60%}55%,100%{left:130%}}
+.bottone.nascosto{opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .8s ease,transform .8s ease,visibility 0s linear .8s}
+.bottone.nascosto.visibile{opacity:1;visibility:visible;transform:none;transition:opacity .8s ease,transform .8s ease}
+@media (prefers-reduced-motion:reduce){.bottone.brilla,.bottone.brilla::after{animation:none}}

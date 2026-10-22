@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I bonus del libro | Club dei Disastri</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="pagina">
+  <p class="etichetta">Club dei Disastri</p>
+  <div class="passi"><span>Passo 1</span><span class="attivo">Passo 2</span></div>
+  <h1>I bonus del libro</h1>
+  <div class="filetto"></div>
+
+  <div class="riquadro tratteggio">
+    <span class="nastro">Se non l'hai ancora fatto</span>
+    <p class="centro">Due righe oneste su Amazon aiutano il prossimo genitore.</p>
+    <a class="bottone brilla" href="https://www.amazon.it/review/create-review?asin=B0HJ3ZTF7Q" target="_blank" rel="noopener">★ Scrivi la recensione su Amazon ★</a>
+  </div>
+
+  <div class="scheda">
+    <div class="num">1</div>
+    <div class="testo">
+      <h3>Gli altri 3 libri della serie, in regalo</h3>
+      <p>In versione digitale, da leggere su telefono, tablet o computer.</p>
+      <a class="bottone vuoto" href="bonus/libri/la-legge-di-murphy-per-bambini-curiosi.pdf" download>La Legge di Murphy per Bambini Curiosi</a>
+      <a class="bottone vuoto" href="bonus/libri/il-club-delle-ragazze-scopre-la-legge-di-murphy.pdf" download>Il Club delle Ragazze Scopre la Legge di Murphy</a>
+      <a class="bottone vuoto" href="bonus/libri/la-legge-di-murphy-per-adolescenti-sbadati.pdf" download>La Legge di Murphy per Adolescenti Sbadati</a>
+    </div>
+  </div>
+
+  <div class="scheda" id="tessera">
+    <div class="num">2</div>
+    <div class="testo">
+      <h3>La tessera del club con il tuo nome</h3>
+      <input type="text" id="nome-t" maxlength="24" placeholder="Il tuo nome" autocomplete="off" aria-label="Il tuo nome">
+      <button class="bottone" type="button" onclick="creaTessera()">Crea la tessera</button>
+    </div>
+  </div>
+
+  <div class="scheda">
+    <div class="num">3</div>
+    <div class="testo">
+      <h3>Il gioco di carte delle 101 leggi</h3>
+      <a class="bottone vuoto" href="bonus/gioco-di-carte-101-leggi.pdf" download>Scarica il gioco</a>
+    </div>
+  </div>
+
+  <div class="scheda">
+    <div class="num">4</div>
+    <div class="testo">
+      <h3>Il kit mattina e verifica</h3>
+      <a class="bottone vuoto" href="bonus/kit-mattina-e-verifica.pdf" download>Scarica il kit</a>
+    </div>
+  </div>
+
+  <div class="scheda" id="diploma">
+    <div class="num">5</div>
+    <div class="testo">
+      <h3>Il diploma, a libro finito</h3>
+      <p>I numeri sono tutti nel libro: cruscotto e ultima Sfida.</p>
+      <input type="text" id="nome-d" maxlength="24" placeholder="Il tuo nome" autocomplete="off" aria-label="Nome per il diploma">
+      <div class="riga-campi">
+        <div><label for="mosse">Mosse</label><input type="number" id="mosse" min="0" max="23" inputmode="numeric" placeholder="su 23"></div>
+        <div><label for="leggi">Leggi</label><input type="number" id="leggi" min="0" max="101" inputmode="numeric" placeholder="su 101"></div>
+        <div><label for="gradi">Gradi</label><input type="number" id="gradi" min="0" max="7" inputmode="numeric" placeholder="su 7"></div>
+      </div>
+      <div class="scelta" style="margin-top:10px">Legge 102 scritta?
+        <label><input type="radio" name="l102" value="si"> Sì</label>
+        <label><input type="radio" name="l102" value="no" checked> Non ancora</label>
+      </div>
+      <button class="bottone" type="button" onclick="creaDiploma()">Crea il diploma</button>
+      <div class="avviso" id="avviso"></div>
+    </div>
+  </div>
+
+  <h2>Per i grandi</h2>
+  <div class="scheda">
+    <div class="num">6</div>
+    <div class="testo">
+      <h3>La guida per i genitori</h3>
+      <a class="bottone vuoto" href="bonus/guida-per-i-genitori.pdf" download>Scarica la guida</a>
+    </div>
+  </div>
+  <div class="scheda">
+    <div class="num">7</div>
+    <div class="testo">
+      <h3>Gli studi di questo libro</h3>
+      <a class="bottone vuoto" href="bonus/gli-studi-di-questo-libro.pdf" download>Scarica gli studi</a>
+    </div>
+  </div>
+
+  <p class="nota centro" style="margin-top:30px">I nomi scritti qui non vengono salvati né inviati.</p>
+
+  <footer>Le 101 Leggi di Murphy per Ragazzi · Chiara M. Bonetti</footer>
+</main>
+<script>
+function pulito(s){return (s||'').trim().replace(/\s+/g,' ').slice(0,24);}
+function creaTessera(){
+  var n=pulito(document.getElementById('nome-t').value);
+  if(!n){document.getElementById('nome-t').focus();return;}
+  location.href='tessera.html?nome='+encodeURIComponent(n);
+}
+function creaDiploma(){
+  var a=document.getElementById('avviso');a.style.display='none';
+  var n=pulito(document.getElementById('nome-d').value);
+  var m=document.getElementById('mosse').value,l=document.getElementById('leggi').value,g=document.getElementById('gradi').value;
+  var l102=(document.querySelector('input[name=l102]:checked')||{}).value||'no';
+  if(!n||m===''||l===''||g===''){a.textContent='Manca un numero. Lo trovi nel libro, non c’è bisogno di ricontare niente.';a.style.display='block';return;}
+  m=Math.max(0,Math.min(23,parseInt(m,10)||0));l=Math.max(0,Math.min(101,parseInt(l,10)||0));g=Math.max(0,Math.min(7,parseInt(g,10)||0));
+  if(m<6){var manca=6-m;a.innerHTML='<strong>Non ci sei ancora, e va bene così.</strong> Il diploma si prende da sei Mosse in su. Te ne '+(manca===1?'manca una':'mancano '+manca)+': fra una settimana ci arrivi.';a.style.display='block';return;}
+  location.href='diploma.html?nome='+encodeURIComponent(n)+'&m='+m+'&l='+l+'&g='+g+'&l102='+l102;
+}
+</script>
+</body>
+</html>

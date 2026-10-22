@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passo 1 | Club dei Disastri</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="pagina">
+  <p class="etichetta">Club dei Disastri</p>
+  <div class="passi"><span class="attivo">Passo 1</span><span>Passo 2</span></div>
+  <h1>Una cosa sola</h1>
+  <div class="filetto"></div>
+
+  <img class="figura piccola" src="img/pane-basso.png" alt="Una mano tiene basso il pane mentre scivola dal tavolo">
+
+  <p class="attacco centro">Questo libro non ha una casa editrice dietro: ha solo il passaparola.<br>Due righe oneste su Amazon aiutano il prossimo genitore a scegliere.</p>
+
+  <a class="bottone brilla" id="vai-recensione" href="https://www.amazon.it/review/create-review?asin=B0HJ3ZTF7Q" target="_blank" rel="noopener">★ Scrivi la recensione su Amazon ★</a>
+  <a class="bottone vuoto nascosto" id="vai-bonus" href="bonus.html">Vai ai bonus</a>
+
+
+  <footer>Le 101 Leggi di Murphy per Ragazzi</footer>
+</main>
+<script>
+(function(){
+  var b=document.getElementById('vai-bonus');
+  function mostra(){b.classList.add('visibile');}
+  setTimeout(mostra,8000);
+  document.getElementById('vai-recensione').addEventListener('click',function(){setTimeout(mostra,1500);});
+})();
+</script>
+</body>
+</html>
