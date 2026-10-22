@@ -99,3 +99,5 @@ footer{margin-top:48px;text-align:center;font-size:13px;color:var(--matita)}
 .libro strong{font-size:16px;line-height:1.3}
 .libro .vai{margin-top:auto;font-weight:600;font-size:15px;border-top:1px dashed var(--riga);padding-top:8px}
 @media (min-width:640px){.carosello{margin:0;padding-left:4px;padding-right:4px}.libro{flex-basis:31%}}
+.libro .stelle{font-size:17px;letter-spacing:.08em;color:#c58a00;line-height:1}
+.libro .stelle em{font-style:normal;font-size:12px;letter-spacing:.04em;color:var(--matita);margin-left:4px}
